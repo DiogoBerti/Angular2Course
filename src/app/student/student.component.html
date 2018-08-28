@@ -1,0 +1,20 @@
+<div *ngIf="student">
+	<!-- ngif para ver se ha estudante.. -->
+	<!-- o ? serve para checar se existe um student definido, caso não, ele desconsidera... -->
+	<!-- O (click) é um emissor de eventos que chama a funcao clicked() quando clica-se no elemento -->
+	Student: <a href="#" (click)="clicked()">{{student?.name}}</a>
+
+	<!-- ngIf é um if em expressão angular -->
+	<div *ngIf="student?.isJedi">				
+		<!-- No caso do click do button, coloca o focus no text area da variavel description -->
+		Temple: {{student?.temple}} <button (click)="description.focus()">Focus</button>
+		<br/>
+		<!-- Ao usar o #, é como setar uma variavel referente ao Dom -->
+		<textarea #description></textarea>
+	</div>
+	<br/>
+</div>
+
+<p *ngIf="!student">
+	Sem dados para exibir!	
+</p>
